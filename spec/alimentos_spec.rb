@@ -35,6 +35,9 @@ RSpec.describe Alimentos do
     		end
 		it "Debe existir una cantidad de azucares" do
       			expect(@alimento.azucares).not_to be nil
+    		end
+		it "Debe existir una cantidad de polialcoholes" do
+      			expect(@alimento.polialcoholes).not_to be nil
     		end   
 	end
 
