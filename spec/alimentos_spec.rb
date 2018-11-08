@@ -70,6 +70,9 @@ RSpec.describe Alimentos do
 		it "Existe un método para obtener la cantidad de grasas" do
       			expect(@alimento.grasas).to eq(7.0)
     		end
+		it "Existe un método para obtener la cantidad de grasas saturadas" do
+      			expect(@alimento.grasas_saturadas).to eq(4.0)
+    		end
 	end
 
 end
