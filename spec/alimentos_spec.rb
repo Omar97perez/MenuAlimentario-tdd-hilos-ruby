@@ -148,5 +148,10 @@ RSpec.describe Alimentos do
     		it "Existe un método para obtener la fila completa de la cantidad de vitaminas y minerales" do
       			expect(@alimento.fila_vitaminas_mineral).to eq([1.0, 5.0, 0.3, 1.5])
     		end
-  	end
-end
+  	end 
+	describe "Matriz:" do 
+    		it "Existe un método para obtener la tabla completa de información nutricional" do
+      		expect(@alimento.to_s).to eq("[2662.5, 31.7, 798.8, 9.5]\n[688.4, 34.4, 206.5, 10.3]\n[7.0, 10.0, 2.1, 3.0]\n[4.0, 20.0, 1.2, 6.0]\n[2.0, 2.9, 0.6, 0.9]\n[1.0, 5.0, 0.3, 1.5]\n[71.0, 27.3, 21.3, 8.2]\n[36.0, 40.0, 10.8, 12.0]\n[0.0, 0.0, 0.0, 0.0]\n[46.0, 230.0, 13.8, 69.0]\n[4.0, 20.0, 1.2, 6.0]\n[0.0, 0.0, 0.0, 0.0]\n[0.9, 15.0, 0.3, 4.5]\n[1.0, 5.0, 0.3, 1.5]")
+    		end
+	end
+  end
