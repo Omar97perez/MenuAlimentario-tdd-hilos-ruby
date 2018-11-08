@@ -97,6 +97,9 @@ RSpec.describe Alimentos do
 		it "Existe un método para obtener la cantidad de proteinas" do
       			expect(@alimento.proteinas).to eq(0.0)
     		end
+		it "Existe un método para obtener la cantidad de sal" do
+      			expect(@alimento.sal).to eq(0.9)
+    		end
 	end
 
 end
