@@ -18,6 +18,9 @@ RSpec.describe Alimentos do
 		it "Debe existir una porcion del alimento en gramos" do
       			expect(@alimento.porcion).not_to be nil
     		end
+		it "Debe existir una cantidad de grasas" do
+      			expect(@alimento.grasas).not_to be nil
+    		end
 	end
 
 end
