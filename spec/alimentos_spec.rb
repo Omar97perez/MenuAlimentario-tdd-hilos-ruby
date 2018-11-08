@@ -105,4 +105,48 @@ RSpec.describe Alimentos do
     		end
 	end
 
+	describe "Filas:" do
+    		it "Existe un método para obtener la fila completa del valor energético (KJ)" do 
+      			expect(@alimento.fila_valor_energetico_kj).to eq([2662.5, 31.7, 798.8, 9.5])
+    		end
+    		it "Existe un método para obtener la fila completa del valor energético (Kcal)" do
+      			expect(@alimento.fila_valor_energetico_kcal).to eq([688.4, 34.4, 206.5, 10.3])
+    		end
+    		it "Existe un método para obtener la fila completa de la cantidad de grasas" do
+      			expect(@alimento.fila_grasas).to eq([7.0, 10.0, 2.1, 3.0])
+    		end
+    		it "Existe un método para obtener la fila completa de la cantidad de grasas saturadas" do
+      			expect(@alimento.fila_grasas_saturada).to eq([4.0, 20.0, 1.2, 6.0])
+    		end
+    		it "Existe un método para obtener la fila completa de la cantidad de grasas monosaturadas" do
+      			expect(@alimento.fila_grasas_monosaturadas).to eq([2.0, 2.9, 0.6, 0.9])
+    		end
+    		it "Existe un método para obtener la fila completa de la cantidad de grasas polisaturadas" do
+      			expect(@alimento.fila_grasas_polisaturadas).to eq([1.0, 5.0, 0.3, 1.5])
+    		end
+    		it "Existe un método para obtener la fila completa de la cantidad de hidratos_carbono" do
+      			expect(@alimento.fila_hidratos_carbono).to eq([71.0, 27.3, 21.3, 8.2])
+    		end
+     		it "Existe un método para obtener la fila completa de la cantidad de azucares" do
+      			expect(@alimento.fila_azucares).to eq([36.0, 40.0, 10.8, 12.0])
+    		end
+    		it "Existe un método para obtener la fila completa de la cantidad de polialcoholes" do
+      			expect(@alimento.fila_polialcoholes).to eq([0.0, 0.0, 0.0, 0.0])
+    		end
+    		it "Existe un método para obtener la fila completa de la cantidad de almidon" do
+      			expect(@alimento.fila_almidon).to eq([46.0, 230.0, 13.8, 69.0])
+    		end
+    		it "Existe un método para obtener la fila completa de la cantidad de fibra" do
+      			expect(@alimento.fila_fibra).to eq([4.0, 20.0, 1.2, 6.0])
+    		end
+    		it "Existe un método para obtener la fila completa de la cantidad de proteinas" do
+      			expect(@alimento.fila_proteinas).to eq([0.0, 0.0, 0.0, 0.0])
+    		end
+    		it "Existe un método para obtener la fila completa de la cantidad de sal" do
+      			expect(@alimento.fila_sal).to eq([0.9, 15.0, 0.3, 4.5])
+    		end
+    		it "Existe un método para obtener la fila completa de la cantidad de vitaminas y minerales" do
+      			expect(@alimento.fila_vitaminas_mineral).to eq([1.0, 5.0, 0.3, 1.5])
+    		end
+  	end
 end
