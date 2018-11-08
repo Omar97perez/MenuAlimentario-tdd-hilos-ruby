@@ -41,6 +41,9 @@ RSpec.describe Alimentos do
     		end
 		it "Debe existir una cantidad de almidon" do
       			expect(@alimento.almidon).not_to be nil
+    		end
+		it "Debe existir una cantidad de fibra" do
+      			expect(@alimento.fibra).not_to be nil
     		end   
 	end
 
