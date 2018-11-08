@@ -10,7 +10,10 @@ RSpec.describe Alimentos do
 
 	describe "Atributos:" do
     		it "Debe existir un nombre" do
-      		expect(@alimento.nombre).not_to be nil
+      			expect(@alimento.nombre).not_to be nil
+    		end
+		it "Debe existir una cantidad del producto en gramos" do
+      			expect(@alimento.cantidad).not_to be nil
     		end
 	end
 
