@@ -30,6 +30,9 @@ RSpec.describe Alimentos do
 		 it "Debe existir una cantidad de grasas polisaturadas" do
       			expect(@alimento.grasas_polisaturadas).not_to be nil
     		end
+		 it "Debe existir una cantidad de hidratos de carbono" do
+      			expect(@alimento.hidratos_carbono).not_to be nil
+    		end 
 	end
 
 end
