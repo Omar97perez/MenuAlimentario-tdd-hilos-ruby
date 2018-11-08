@@ -47,7 +47,10 @@ RSpec.describe Alimentos do
     		end
 		it "Debe existir una cantidad de proteinas" do
       			expect(@alimento.proteinas).not_to be nil
-    		end   
+    		end
+		it "Debe existir una cantidad de sal" do
+      			expect(@alimento.sal).not_to be nil
+    		end    
 	end
 
 end
