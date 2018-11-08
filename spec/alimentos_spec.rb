@@ -27,6 +27,9 @@ RSpec.describe Alimentos do
 		it "Debe existir una cantidad de grasas monosaturadas" do
       			expect(@alimento.grasas_monosaturadas).not_to be nil
     		end
+		 it "Debe existir una cantidad de grasas polisaturadas" do
+      			expect(@alimento.grasas_polisaturadas).not_to be nil
+    		end
 	end
 
 end
