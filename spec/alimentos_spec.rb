@@ -7,7 +7,8 @@ RSpec.describe Alimentos do
   	it "Has a version number" do
     		expect(Alimentos::VERSION).not_to be nil
  	end
-
+	
+	#Comprobación de que cada variable no es un argumento nulo
 	describe "Atributos:" do
     		it "Debe existir un nombre" do
       			expect(@alimento.nombre).not_to be nil
