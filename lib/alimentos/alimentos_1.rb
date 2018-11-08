@@ -2,6 +2,8 @@ require "alimentos/version"
 
 class Comida
 	attr_reader :nombre,:cantidad,:porcion,:grasas,:grasas_saturadas,:grasas_monosaturadas,:grasas_polisaturadas,:hidratos_carbono,:azucares,:polialcoholes,:almidon,:fibra,:proteinas,:sal,:vitaminas_mineral
+	attr_reader :valor_energetico_kj_porcion, :valor_energetico_kcal_porcion, :grasas_porcion, :grasas_saturadas_porcion, :hidratos_carbono_porcion, :azucares_porcion, :proteinas_porcion, :sal_porcion
+
 	def initialize(nombre,cantidad,porcion,grasas,grasas_saturadas,grasas_monosaturadas,grasas_polisaturadas,hidratos_carbono,azucares,polialcoholes,almidon,fibra,proteinas,sal,vitaminas_mineral)
         	@nombre=nombre
         	@cantidad=cantidad
