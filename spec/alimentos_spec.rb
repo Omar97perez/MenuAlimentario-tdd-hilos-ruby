@@ -56,7 +56,7 @@ RSpec.describe Alimentos do
       			expect(@alimento.vitaminas_mineral).not_to be nil
     		end    
 	end
-
+	#Comprobación de que devuleve el valor que debe
 	describe "Gets:" do
     		it "Existe un método para obtener el nombre." do
       			expect(@alimento.nombre).to eq("Kellogs")
