@@ -67,6 +67,9 @@ RSpec.describe Alimentos do
 		it "Existe un método para obtener la porción del alimento" do
       			expect(@alimento.porcion).to eq(30.0)
     		end
+		it "Existe un método para obtener la cantidad de grasas" do
+      			expect(@alimento.grasas).to eq(7.0)
+    		end
 	end
 
 end
