@@ -32,7 +32,10 @@ RSpec.describe Alimentos do
     		end
 		 it "Debe existir una cantidad de hidratos de carbono" do
       			expect(@alimento.hidratos_carbono).not_to be nil
-    		end 
+    		end
+		it "Debe existir una cantidad de azucares" do
+      			expect(@alimento.azucares).not_to be nil
+    		end   
 	end
 
 end
