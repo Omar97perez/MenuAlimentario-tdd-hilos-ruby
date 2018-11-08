@@ -1,7 +1,7 @@
 require "alimentos/version"
 
 class Comida
-	attr_reader :nombre,:cantidad
+	attr_reader :nombre,:cantidad,:porcion
 	def initialize(nombre,cantidad,porcion,grasas,grasas_saturadas,grasas_monosaturadas,grasas_polisaturadas,hidratos_carbono,azucares,polialcoholes,almidon,fibra,proteinas,sal,vitaminas_mineral)
         	@nombre=nombre
         	@cantidad=cantidad
