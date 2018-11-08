@@ -151,7 +151,33 @@ RSpec.describe Alimentos do
   	end 
 	describe "Matriz:" do 
     		it "Existe un método para obtener la tabla completa de información nutricional" do
-      		expect(@alimento.to_s).to eq("[2662.5, 31.7, 798.8, 9.5]\n[688.4, 34.4, 206.5, 10.3]\n[7.0, 10.0, 2.1, 3.0]\n[4.0, 20.0, 1.2, 6.0]\n[2.0, 2.9, 0.6, 0.9]\n[1.0, 5.0, 0.3, 1.5]\n[71.0, 27.3, 21.3, 8.2]\n[36.0, 40.0, 10.8, 12.0]\n[0.0, 0.0, 0.0, 0.0]\n[46.0, 230.0, 13.8, 69.0]\n[4.0, 20.0, 1.2, 6.0]\n[0.0, 0.0, 0.0, 0.0]\n[0.9, 15.0, 0.3, 4.5]\n[1.0, 5.0, 0.3, 1.5]")
+      			expect(@alimento.to_s).to eq("[2662.5, 31.7, 798.8, 9.5]\n[688.4, 34.4, 206.5, 10.3]\n[7.0, 10.0, 2.1, 3.0]\n[4.0, 20.0, 1.2, 6.0]\n[2.0, 2.9, 0.6, 0.9]\n[1.0, 5.0, 0.3, 1.5]\n[71.0, 27.3, 21.3, 8.2]\n[36.0, 40.0, 10.8, 12.0]\n[0.0, 0.0, 0.0, 0.0]\n[46.0, 230.0, 13.8, 69.0]\n[4.0, 20.0, 1.2, 6.0]\n[0.0, 0.0, 0.0, 0.0]\n[0.9, 15.0, 0.3, 4.5]\n[1.0, 5.0, 0.3, 1.5]")
     		end
 	end
-  end
+  	describe "Legislación Europea sobre IR:" do
+    		it "El valor energético por porción de comida es menor que 8400KJ" do 
+      			expect(@alimento.valor_energetico_kj_porcion).to be < (8400)
+    		end
+    		it "El valor energético por porción de comida es menor que 2000 kcal/g" do
+      			expect(@alimento.valor_energetico_kcal_porcion).to be < (2000)
+    		end
+    		it "La grasa por porción de comida es menor que 70g" do
+      			expect(@alimento.grasas_porcion).to be < (70)
+    		end
+    		it "La grasa saturadas por porción de comida es menor que 20g" do
+      			expect(@alimento.grasas_saturadas_porcion).to be < (20)
+    		end
+    		it "Los hidratos de carbono por porción de comida es menor que 260g" do
+      			expect(@alimento.hidratos_carbono_porcion).to be < (260)
+    		end
+    		it "Los azúcares por porción de comida es menor que 90g" do
+      			expect(@alimento.azucares_porcion).to be < (90)
+    		end
+    		it "Los azúcares por porción de comida es menor que 50g" do
+      			expect(@alimento.proteinas_porcion).to be < (50)
+    		end
+    		it "La sal por porción de comida es menor que 6g" do
+      			expect(@alimento.sal_porcion).to be < (6)
+    		end
+  	end
+end
