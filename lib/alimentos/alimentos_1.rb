@@ -133,4 +133,7 @@ class Comida
         	@vitaminas_mineral_ir_porcion = ((@vitaminas_mineral/20)*@porcion).round(1)
         	[@vitaminas_mineral_cien_gramos,@vitaminas_mineral_ir,@vitaminas_mineral_porcion,@vitaminas_mineral_ir_porcion]
     	end
+	def to_s() 
+    		"#{fila_valor_energetico_kj()}\n#{fila_valor_energetico_kcal()}\n#{fila_grasas()}\n#{fila_grasas_saturada()}\n#{fila_grasas_monosaturadas()}\n#{fila_grasas_polisaturadas()}\n#{fila_hidratos_carbono()}\n#{fila_azucares()}\n#{fila_polialcoholes()}\n#{fila_almidon()}\n#{fila_fibra()}\n#{fila_proteinas()}\n#{fila_sal()}\n#{fila_vitaminas_mineral()}"
+    	end
 end
