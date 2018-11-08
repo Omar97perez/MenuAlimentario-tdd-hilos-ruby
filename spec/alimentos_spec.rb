@@ -79,6 +79,9 @@ RSpec.describe Alimentos do
 		it "Existe un método para obtener la cantidad de grasas polisaturadas" do
       			expect(@alimento.grasas_polisaturadas).to eq(1.0)
     		end
+		 it "Existe un método para obtener la cantidad de hidratos de carbono" do
+      			expect(@alimento.hidratos_carbono).to eq(71.0)
+    		end
 	end
 
 end
