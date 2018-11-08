@@ -85,6 +85,9 @@ RSpec.describe Alimentos do
 		it "Existe un método para obtener la cantidad de azucares" do
       			expect(@alimento.azucares).to eq(36.0)
     		end
+		it "Existe un método para obtener la cantidad de polialcoholes" do
+      			expect(@alimento.polialcoholes).to eq(0.0)
+    		end
 	end
 
 end
