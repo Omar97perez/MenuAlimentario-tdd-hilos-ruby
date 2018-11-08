@@ -61,6 +61,9 @@ RSpec.describe Alimentos do
     		it "Existe un método para obtener el nombre." do
       			expect(@alimento.nombre).to eq("Kellogs")
     		end
+		it "Existe un método para obtener la cantidad" do
+      			expect(@alimento.cantidad).to eq(100.0)
+    		end
 	end
 
 end
