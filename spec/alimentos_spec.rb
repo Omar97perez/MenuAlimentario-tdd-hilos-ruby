@@ -50,6 +50,9 @@ RSpec.describe Alimentos do
     		end
 		it "Debe existir una cantidad de sal" do
       			expect(@alimento.sal).not_to be nil
+    		end
+		it "Debe existir una cantidad de vitaminas_mineral" do
+      			expect(@alimento.vitaminas_mineral).not_to be nil
     		end    
 	end
 
