@@ -44,5 +44,5 @@ RSpec.describe Lista do
         	@node1.next=@node2 end
         	@lista= Lista.new(@node1,@node2)
         	@lista_menor= Lista.new(@node3,@node3)
-    	end
-end
+ 	
+	end
