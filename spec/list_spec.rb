@@ -1,4 +1,3 @@
-
 RSpec.describe Node do
 	before :all do
         	@node1=Node.new(1, nil, nil)
