@@ -1,3 +1,4 @@
+
 RSpec.describe Node do
 	before :all do
         	@node1=Node.new(1, nil, nil)
@@ -41,8 +42,24 @@ RSpec.describe Lista do
         	@node1=Node.new(@alimento1, nil, nil)
         	@node2=Node.new(@alimento2, nil, @node1)
         	@node3=Node.new(nil, nil, nil)
-        	@node1.next=@node2 end
+        	@node1.next=@node2 
         	@lista= Lista.new(@node1,@node2)
         	@lista_menor= Lista.new(@node3,@node3)
  	
-	end
+	end 
+	describe "Prueba valor listas:" do
+        	it "Existe cabeza de la lista" do
+            		expect(@lista.first).not_to be nil
+        	end
+        	it "Existe cola de la lista" do
+            		expect(@lista.last).not_to be nil
+        	end
+        	it "La cabeza de la lista es Kellogs" do
+            		expect(@lista.first.value.nombre).to eq("Kellogs")
+        	end
+        	it "La cola de la lista es Lion" do
+            		expect(@lista.last.value.nombre).to eq("Lion")
+        	end
+        
+    	end
+end

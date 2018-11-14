@@ -1,4 +1,5 @@
 require "alimentos/version"
+
 Node = Struct.new(:value,:next,:prev)
 
 class Lista
@@ -7,6 +8,6 @@ class Lista
 
 	def initialize(first,last)
 		@first= first
-		@lsta = last
+		@last = last
 	end
 end
