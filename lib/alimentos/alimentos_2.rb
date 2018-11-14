@@ -21,5 +21,14 @@ class Lista
                 		@last = node
             		end
         	end
-   	end
+   	end 
+	def pop_first
+        	@first = @first.next
+        	@first.prev = nil
+    	end 
+    
+    	def pop_last
+        	@last = @last.prev
+        	@last.next = nil
+    	end
 end
