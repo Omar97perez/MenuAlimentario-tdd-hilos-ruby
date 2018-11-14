@@ -91,5 +91,19 @@ RSpec.describe Lista do
             		@lista.pop_last
             		expect(@lista.last.value.nombre).to eq("All bran")
         	end
+    	end 
+	describe "Clasificación:" do
+        	c=0
+        	while c < 5
+        
+            		it "Elemento con menos de 6 gramos de sal" do
+                		expect(@lista.last.value.sal).to be < (6)
+                		@lista_menor.insertEnd(@lista.last)
+                		@lista.pop_last
+            		end
+            
+            		c+=1
+            
+        	end
     	end
 end
