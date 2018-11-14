@@ -80,4 +80,16 @@ RSpec.describe Lista do
             		expect(@lista.last.value).to eq(@alimento8)
         	end
     	end
+
+	describe "Extracción de un nodo:"do
+         	it "Se ha extraido el primer elemento con éxito" do
+            		@lista.pop_first
+            		expect(@lista.first.value.nombre).to eq("Lion")
+        	end
+        
+        	it "Se ha extraido el último elemento con éxito" do
+            		@lista.pop_last
+            		expect(@lista.last.value.nombre).to eq("All bran")
+        	end
+    	end
 end
