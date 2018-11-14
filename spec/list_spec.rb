@@ -62,4 +62,23 @@ RSpec.describe Lista do
         	end
         
     	end
+
+	describe "Inserción de nodos:" do
+        
+		it "Insertar un nodo" do
+            		@alimento3 = Comida.new("Crunch",100.0,30.0,7.0,4.0,2.0,1.0,71.0,36.0,0.0,46.0,4.0,0.0,1.0,1.0)
+            		@lista.insertEnd(@alimento3)
+            		expect(@lista.last.value).to eq(@alimento3)
+        	end
+        
+        	it "Insertar varios nodos" do
+            		@alimento4= Comida.new("Chocapic",100.0,35.0,7.5,4.5,2.0,1.0,80.0,40.0,0.0,36.0,4.3,1.0,0.7,2.0)
+            		@alimento5 = Comida.new("Nesquik",100.0,37.0,7.2,4.2,2.0,1.0,70.0,30.0,0.5,37.0,5.3,2.0,0.2,1.5)
+            		@alimento6= Comida.new("Estrellitas",100.0,32.0,10.5,5.5,3.0,2.0,70.0,30.0,2.0,39.0,4.2,1.2,0.8,2.2)
+            		@alimento7= Comida.new("All bran",100.0,32.0,10.5,5.5,3.0,2.0,70.0,30.0,2.0,39.0,4.2,1.2,0.8,2.2)
+            		@alimento8= Comida.new("ChocoKrispies",100.0,32.0,10.5,5.5,3.0,2.0,70.0,30.0,2.0,39.0,4.2,1.2,0.8,2.2)
+            		@lista.insertEnd(@alimento4,@alimento5,@alimento6,@alimento7,@alimento8)
+            		expect(@lista.last.value).to eq(@alimento8)
+        	end
+    	end
 end
