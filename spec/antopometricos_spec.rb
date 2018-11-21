@@ -59,4 +59,19 @@ RSpec.describe Operaciones do
             		expect(@sujeto1.respond_to?('to_s')).to eq(true)
         	end
     	end
+
+	describe "Pruebas de clase Lista" do 
+        	it "El objeto pertenece a la clase lista" do
+            		expect(@lista.is_a?Lista).to be(true)
+        	end
+        	it "El objeto puede usar la función insertEnd" do
+            		expect(@lista.respond_to?('insertEnd')).to eq(true)
+        	end
+        	it "El objeto puede usar la función pop_first" do
+            		expect(@lista.respond_to?('pop_first')).to eq(true)
+        	end
+    		it "El objeto puede usar la función pop_last" do
+            		expect(@lista.respond_to?('pop_last')).to eq(true)
+        	end
+    	end
 end
