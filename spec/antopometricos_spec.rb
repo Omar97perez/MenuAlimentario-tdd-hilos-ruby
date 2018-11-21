@@ -6,4 +6,15 @@ RSpec.describe Operaciones do
         	@lista.insertEnd(@sujeto1)
 	end
 
+	describe "Pruebas de clase Datos" do
+        	it "Datos pertenece a la clase Class" do 
+            		expect(Datos.is_a?Class).to be(true)
+        	end
+        	it "El objeto pertenece a la clase Datos" do
+            		expect(@sujeto1.is_a?Datos).to be(true)
+        	end
+        	it "El objeto puede usar la funcion to_s de la clase Datos" do
+             		expect(@sujeto1.respond_to?('to_s')).to eq(true)
+     	   	end
+    	end
 end
