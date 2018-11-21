@@ -5,4 +5,5 @@ RSpec.describe Operaciones do
              	@lista= Lista.new(nil,nil)
         	@lista.insertEnd(@sujeto1)
 	end
+
 end
