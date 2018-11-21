@@ -17,4 +17,46 @@ RSpec.describe Operaciones do
              		expect(@sujeto1.respond_to?('to_s')).to eq(true)
      	   	end
     	end
+	
+	describe "Pruebas de clase Operaciones" do
+       		 it "Operaciones pertenece a la clase Class" do
+            		expect(Operaciones.is_a?Class).to be(true)
+        	end
+        	it "El objeto pertenece a la clase Operaciones" do
+            		expect(@sujeto1.is_a?Operaciones).to be(true)
+        	end
+        	it "El objeto puede usar la función cintura de la clase Operaciones" do
+            		expect(@sujeto1.respond_to?('cintura')).to eq(true)
+        	end
+        	it "El objeto puede usar la función cadera de la clase Operaciones" do
+            		expect(@sujeto1.respond_to?('cadera')).to eq(true)
+        	end
+        	it "El objeto puede usar la función bicipital de la clase Operaciones" do
+            		expect(@sujeto1.respond_to?('bicipital')).to eq(true)
+        	end
+        	it "El objeto puede usar la función tricipital de la clase Operaciones" do
+            		expect(@sujeto1.respond_to?('tricipital')).to eq(true)
+        	end
+        	it "El objeto puede usar la función subescapular de la clase Operaciones" do
+            		expect(@sujeto1.respond_to?('subescapular')).to eq(true)
+        	end
+        	it "El objeto puede usar la función suprailiaco de la clase Operaciones" do
+            		expect(@sujeto1.respond_to?('suprailiaco')).to eq(true)
+        	end
+        	it "El objeto puede usar la función brazo de la clase Operaciones" do
+            		expect(@sujeto1.respond_to?('brazo')).to eq(true)
+        	end
+        	it "El objeto puede usar la función imc de la clase Operaciones" do
+            		expect(@sujeto1.respond_to?('imc')).to eq(true)
+        	end
+        	it "El objeto puede usar la función porcentaje_grasa de la clase Operaciones" do
+            		expect(@sujeto1.respond_to?('porcentaje_grasa')).to eq(true)
+        	end
+        	it "El objeto puede usar la función rcc de la clase Operaciones" do
+            		expect(@sujeto1.respond_to?('rcc')).to eq(true)
+        	end
+        	it "El objeto puede usar la función to_s de la clase Operaciones" do
+            		expect(@sujeto1.respond_to?('to_s')).to eq(true)
+        	end
+    	end
 end
