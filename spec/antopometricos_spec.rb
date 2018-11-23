@@ -23,6 +23,9 @@ RSpec.describe Operaciones do
     	end
 	
 	describe "Pruebas de clase Operaciones" do
+		it "Operaciones es instancia de la clase Operaciones" do
+            		expect(Operaciones.instance_of?Class).to be(true)
+        	end
        		 it "Operaciones pertenece a la clase Class" do
             		expect(Operaciones.is_a?Class).to be(true)
         	end
