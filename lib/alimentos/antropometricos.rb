@@ -11,7 +11,7 @@ class Datos
 end 
 
 class Operaciones < Datos
- 	attr_reader :peso,:altura,:hora,:edad,:sexo
+ 	attr_reader :peso,:altura,:hora,:edad,:sexo,:imc
     
     	def initialize(nombre,dni,peso,altura,hora,edad,sexo,cintura,cadera,tricipital,bicipital,subescapular,suprailiaco,brazo)
     	    	super(nombre,dni)
