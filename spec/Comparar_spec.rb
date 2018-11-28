@@ -95,6 +95,7 @@ RSpec.describe Enumerable do
   	end
 
     describe "Enumerable Información Nutricional"do
+        
         it "Comprobando el método max" do
             expect(@lista1.max).to eq(@alimento2)
         end
