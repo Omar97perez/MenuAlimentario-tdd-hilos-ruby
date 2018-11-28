@@ -15,6 +15,7 @@ class Lista
     	@last = last
 	end
     
+    # Esta función consiste en la incorporación de varios nodos en la lista
 	def insertEnd *args
     	args.each do |arg_item|
         		node = Node.new(arg_item, nil, nil)
@@ -28,16 +29,19 @@ class Lista
     	end
    	end 
    	
+   	# Esta función consiste en la extracción del primer elemento de la lista
 	def pop_first
         	@first = @first.next
         	@first.prev = nil
     	end 
 
+   	# Esta función consiste en la extracción del último elemento de la lista
 	def pop_last
     	@last = @last.prev
     	@last.next = nil
 	end
 	
+	# Esta función realiza un yield de cada elemento de la lista
 	def each
 		node = @first
 		while node != nil do
