@@ -5,13 +5,14 @@ require "alimentos/version"
 class Datos
    	attr_reader :nombre,:dni
     
-    	def initialize(nombre,dni)
-        	@nombre=nombre
-        	@dni=dni
-    	end
-    	def to_s
-    		"#{nombre}\n#{dni}"
-    	end 
+	def initialize(nombre,dni)
+    	@nombre=nombre
+    	@dni=dni
+	end
+	
+	def to_s
+		"#{nombre}\n#{dni}"
+	end 
 end 
 
 # @author Omar Pérez Znakar 
@@ -20,36 +21,42 @@ class Operaciones < Datos
 	include Comparable
  	attr_reader :peso,:altura,:hora,:edad,:sexo,:imc
     
-    	def initialize(nombre,dni,peso,altura,hora,edad,sexo,cintura,cadera,tricipital,bicipital,subescapular,suprailiaco,brazo)
-    	    	super(nombre,dni)
-        	@peso = peso
-        	@altura = altura
-        	@hora = hora
-        	@edad = edad
-        	@sexo = sexo
-        	@cintura = cintura
-        	@cadera = cadera
-        	@tricipital = tricipital
-        	@bicipital = bicipital
-        	@subescapular = subescapular
-        	@suprailiaco = suprailiaco
-        	@brazo = brazo
-    	end
+	def initialize(nombre,dni,peso,altura,hora,edad,sexo,cintura,cadera,tricipital,bicipital,subescapular,suprailiaco,brazo)
+	    	super(nombre,dni)
+    	@peso = peso
+    	@altura = altura
+    	@hora = hora
+    	@edad = edad
+    	@sexo = sexo
+    	@cintura = cintura
+    	@cadera = cadera
+    	@tricipital = tricipital
+    	@bicipital = bicipital
+    	@subescapular = subescapular
+    	@suprailiaco = suprailiaco
+    	@brazo = brazo
+	end
 
+	# Esta función consiste en calcular la media de la cintura de los valores dado
+	# @return media cintura
 	def cintura
         	suma = 0
         	@cintura.each {|elemento| suma = suma + elemento}
         	div = 0
         	div = suma / @cintura.size()
     	end
-	
+    	
+	# Esta función consiste en calcular la media de la cintura de los valores dado
+	# @return media cintura
 	def cadera
         	suma = 0
         	@cadera.each {|elemento| suma = suma + elemento}
         	div = 0
         	div = suma / @cadera.size()
     	end
-
+    	
+	# Esta función consiste en calcular la media de la cintura de los valores dado
+	# @return media cintura
 	def bicipital
         	suma = 0
         	@bicipital.each {|elemento| suma = suma + elemento}
@@ -57,6 +64,8 @@ class Operaciones < Datos
         	div = suma / @bicipital.size()
     	end
 
+	# Esta función consiste en calcular la media del tricipital de los valores dado
+	# @return media tricipital
 	def tricipital
         	suma = 0
         	@tricipital.each {|elemento| suma = suma + elemento}
@@ -64,6 +73,8 @@ class Operaciones < Datos
         	div = suma / @tricipital.size()
     	end
 
+	# Esta función consiste en calcular la media del subescapular de los valores dado
+	# @return media subescapular
 	def subescapular
         	suma = 0
         	@subescapular.each {|elemento| suma = suma + elemento}
@@ -71,6 +82,8 @@ class Operaciones < Datos
         	div = suma / @subescapular.size()
     	end
 
+	# Esta función consiste en calcular la media del suprailiaco de los valores dado
+	# @return media suprailiaco
 	def suprailiaco
         	suma = 0
         	@suprailiaco.each {|elemento| suma = suma + elemento}
@@ -78,6 +91,8 @@ class Operaciones < Datos
         	div = suma / @suprailiaco.size()
     	end
 
+	# Esta función consiste en calcular la media de la cintura de los valores dado
+	# @return media cintura
 	def brazo
         	suma = 0
         	@brazo.each {|elemento| suma = suma + elemento}
@@ -85,11 +100,15 @@ class Operaciones < Datos
         	div = suma / @brazo.size()
     	end
 
+	# Esta función consiste en calcular el imc
+	# @return imc
 	def imc()
         	@indice = @peso / (@altura * @altura)
         	@indice
     	end
 
+	# Esta función consiste calcular en que intervalo de porcentaje de grasa
+	# @return nombre del intervalo de porcentaje de grasa
 	def porcentaje_grasa()
         	@porcentaje = (1.2 * @indice) + (0.23 * @edad) - (10.8 * @sexo) - 5.4
        		@resultado = case @porcentaje
@@ -103,6 +122,8 @@ class Operaciones < Datos
         	@resultado
    	end
 
+	# Esta función consiste calcular en que intervalo de rcc
+	# @return nombre del intervalo del rcc
 	def rcc()
 	   	@rcc = cintura / cadera
     	case @rcc
@@ -113,12 +134,14 @@ class Operaciones < Datos
     	end
     	@resultado	
 	end
-    	
+
+	# @return valores datos antropométricos
     def to_s
     	"#{cintura}\n#{cadera}\n#{bicipital}\n#{tricipital}\n#{subescapular}\n#{suprailiaco}\n#{brazo}\n#{imc}\n#{porcentaje_grasa}\n#{rcc}\n"
     end
-    	
-    def <=> another
+
+	# Esta funciión consiste en una sobrecarga de los aperadores <=> para que se puedan comparar dos objetos a través de las grasas
+	def <=> another
     	imc <=> another.imc	
     end
 end
