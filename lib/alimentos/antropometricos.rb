@@ -11,6 +11,7 @@ class Datos
 end 
 
 class Operaciones < Datos
+	include Comparable
  	attr_reader :peso,:altura,:hora,:edad,:sexo,:imc
     
     	def initialize(nombre,dni,peso,altura,hora,edad,sexo,cintura,cadera,tricipital,bicipital,subescapular,suprailiaco,brazo)
@@ -109,5 +110,9 @@ class Operaciones < Datos
     	
     	def to_s
     		"#{cintura}\n#{cadera}\n#{bicipital}\n#{tricipital}\n#{subescapular}\n#{suprailiaco}\n#{brazo}\n#{imc}\n#{porcentaje_grasa}\n#{rcc}\n"
-    	end 
+    	end
+    	
+    	def <=> another
+        imc <=> another.imc
+	end
 end
