@@ -98,21 +98,21 @@ class Operaciones < Datos
    	end
 
 	def rcc()
-       		@rcc = cintura / cadera
-        	case @rcc
-            		when (0.83..0.88) then @resultado ="Bajo"
-            		when (0.89..0.95) then @resultado ="Moderado"
-            		when (0.96..1.01) then @resultado ="Alto"
-            		when (1.02..Float::INFINITY) then @resultado ="Muy alto"
-        	end
-        	@resultado
+	   	@rcc = cintura / cadera
+    	case @rcc
+        		when (0.83..0.88) then @resultado ="Bajo"
+        		when (0.89..0.95) then @resultado ="Moderado"
+        		when (0.96..1.01) then @resultado ="Alto"
+        		when (1.02..Float::INFINITY) then @resultado ="Muy alto"
     	end
-    	
-    	def to_s
-    		"#{cintura}\n#{cadera}\n#{bicipital}\n#{tricipital}\n#{subescapular}\n#{suprailiaco}\n#{brazo}\n#{imc}\n#{porcentaje_grasa}\n#{rcc}\n"
-    	end
-    	
-    	def <=> another
-        imc <=> another.imc
+    	@resultado	
 	end
+    	
+    def to_s
+    	"#{cintura}\n#{cadera}\n#{bicipital}\n#{tricipital}\n#{subescapular}\n#{suprailiaco}\n#{brazo}\n#{imc}\n#{porcentaje_grasa}\n#{rcc}\n"
+    end
+    	
+    def <=> another
+    	imc <=> another.imc	
+    end
 end

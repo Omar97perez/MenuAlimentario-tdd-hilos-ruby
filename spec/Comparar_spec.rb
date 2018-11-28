@@ -75,15 +75,26 @@ RSpec.describe Enumerable do
 		@alimento3 = Comida.new("Nesquik",100.0,37.0,7.2,4.2,2.0,1.0,70.0,30.0,0.5,37.0,5.3,2.0,0.2,1.5)
 		@alimento4 = Comida.new("Nesquik",100.0,37.0,7.2,4.2,2.0,1.0,70.0,30.0,0.5,37.0,5.3,2.0,0.2,1.5)
 		
-		@lista = Lista.new(null,null)
-		Lista.insertEnd(@alimento1,@alimento2,@alimento3,@alimento4)
+		@lista1 = Lista.new(nil,nil)
+		@lista1.insertEnd(@alimento1,@alimento2,@alimento3,@alimento4)
 		
-		@lista2 = Lista.new(null,null)
+		@lista2 = Lista.new(nil,nil)
 		
 		@sujeto1 = Operaciones.new("María","79062974Q",49,1.67,"12:00",16,0,[72.0,72.9],[82.0,82.9],[10.5,10.0,11.0],[25.5,26.0,25.9],[17.0,17.0,17.9],[25.5,26.0,25.9],[10.0,11.0])
 		@sujeto2 = Operaciones.new("Omar","79062976Q",65,1.72,"12:00",20,1,[82.0,82.9],[82.0,82.9],[10.5,10.0,11.0],[25.5,26.0,25.9],[17.0,17.0,17.9],[17.0,17.0,17.9],[10.0,11.0])
     	@sujeto3 = Operaciones.new("Carla","79062975Q",47,1.62,"12:00",19,0,[70.0,70.9],[82.0,82.9],[10.5,10.0,11.0],[25.5,26.0,25.9],[17.0,17.0,17.9],[25.5,26.0,25.9],[10.0,11.0])
     	@sujeto4 = Operaciones.new("Carla","79062975Q",47,1.62,"12:00",19,0,[70.0,70.9],[82.0,82.9],[10.5,10.0,11.0],[25.5,26.0,25.9],[17.0,17.0,17.9],[25.5,26.0,25.9],[10.0,11.0])
+    	
+    	
   	end
 
+    describe "Enumerable Información Nutricional"do
+        it "Comprobando el metodo max" do
+            expect(@lista1.max).to eq(@alimento2)
+        end
+        
+        it "Comprobando el metodo min" do
+            expect(@lista1.min).to eq(@alimento1)
+        end
+    end
 end
