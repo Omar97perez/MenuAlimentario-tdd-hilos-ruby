@@ -1,5 +1,9 @@
+require "alimentos/version" 
+
+# @author Omar Pérez Znakar 
+# Esta clase representa los Datos personales de una persona x
 class Datos
-   	attr_reader :nombre,:dni, :datos_antropometricos
+   	attr_reader :nombre,:dni
     
     	def initialize(nombre,dni)
         	@nombre=nombre
@@ -10,6 +14,8 @@ class Datos
     	end 
 end 
 
+# @author Omar Pérez Znakar 
+# Esta clase representa los datos antopométricos de una persona x
 class Operaciones < Datos
 	include Comparable
  	attr_reader :peso,:altura,:hora,:edad,:sexo,:imc

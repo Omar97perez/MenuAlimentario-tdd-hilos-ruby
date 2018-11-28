@@ -1,5 +1,7 @@
-#require "alimentos/version"
+require "alimentos/version"
 
+# @author Omar Pérez Znakar 
+# Esta clase representa la información nurtricional solbre un alimento x
 class Comida
 	include Comparable
 	attr_reader :nombre,:cantidad,:porcion,:grasas,:grasas_saturadas,:grasas_monosaturadas,:grasas_polisaturadas,:hidratos_carbono,:azucares,:polialcoholes,:almidon,:fibra,:proteinas,:sal,:vitaminas_mineral
