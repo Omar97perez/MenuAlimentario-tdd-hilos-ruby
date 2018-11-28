@@ -79,6 +79,7 @@ RSpec.describe Enumerable do
 		@lista1.insertEnd(@alimento1,@alimento2,@alimento3,@alimento4)
 		
 		@lista2 = Lista.new(nil,nil)
+		@lista2.insertEnd(@alimento1,@alimento2,@alimento3,@alimento4)
 		
 		@sujeto1 = Operaciones.new("María","79062974Q",49,1.67,"12:00",16,0,[72.0,72.9],[82.0,82.9],[10.5,10.0,11.0],[25.5,26.0,25.9],[17.0,17.0,17.9],[25.5,26.0,25.9],[10.0,11.0])
 		@sujeto2 = Operaciones.new("Omar","79062976Q",65,1.72,"12:00",20,1,[82.0,82.9],[82.0,82.9],[10.5,10.0,11.0],[25.5,26.0,25.9],[17.0,17.0,17.9],[17.0,17.0,17.9],[10.0,11.0])

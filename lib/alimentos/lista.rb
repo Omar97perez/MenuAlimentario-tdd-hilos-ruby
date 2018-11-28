@@ -3,6 +3,7 @@ require "alimentos/version"
 Node = Struct.new(:value, :next, :prev) 
 
 class Lista
+	include Enumerable
 	attr_reader :first, :last
     
 	def initialize(first, last)
@@ -32,5 +33,12 @@ class Lista
     	@last = @last.prev
     	@last.next = nil
 	end
-
+	
+	def each
+		node = @first
+		while node != nil do
+		    yield node.value
+		    node = node.next
+		end	
+	end
 end
