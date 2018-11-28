@@ -79,23 +79,64 @@ RSpec.describe Enumerable do
 		@lista1.insertEnd(@alimento1,@alimento2,@alimento3,@alimento4)
 		
 		@lista2 = Lista.new(nil,nil)
-		@lista2.insertEnd(@alimento1,@alimento2,@alimento3,@alimento4)
+		@lista2.insertEnd(@alimento1,@alimento4,@alimento3,@alimento2)
 		
 		@sujeto1 = Operaciones.new("María","79062974Q",49,1.67,"12:00",16,0,[72.0,72.9],[82.0,82.9],[10.5,10.0,11.0],[25.5,26.0,25.9],[17.0,17.0,17.9],[25.5,26.0,25.9],[10.0,11.0])
 		@sujeto2 = Operaciones.new("Omar","79062976Q",65,1.72,"12:00",20,1,[82.0,82.9],[82.0,82.9],[10.5,10.0,11.0],[25.5,26.0,25.9],[17.0,17.0,17.9],[17.0,17.0,17.9],[10.0,11.0])
     	@sujeto3 = Operaciones.new("Carla","79062975Q",47,1.62,"12:00",19,0,[70.0,70.9],[82.0,82.9],[10.5,10.0,11.0],[25.5,26.0,25.9],[17.0,17.0,17.9],[25.5,26.0,25.9],[10.0,11.0])
     	@sujeto4 = Operaciones.new("Carla","79062975Q",47,1.62,"12:00",19,0,[70.0,70.9],[82.0,82.9],[10.5,10.0,11.0],[25.5,26.0,25.9],[17.0,17.0,17.9],[25.5,26.0,25.9],[10.0,11.0])
     	
+    	@lista3 = Lista.new(nil,nil)
+		@lista3.insertEnd(@sujeto1,@sujeto2,@sujeto3,@sujeto4)
+		
+		@lista4 = Lista.new(nil,nil)
+		@lista4.insertEnd(@sujeto1,@sujeto4,@sujeto3,@sujeto2)
     	
   	end
 
     describe "Enumerable Información Nutricional"do
-        it "Comprobando el metodo max" do
+        it "Comprobando el método max" do
             expect(@lista1.max).to eq(@alimento2)
         end
         
-        it "Comprobando el metodo min" do
+        it "Comprobando el método min" do
             expect(@lista1.min).to eq(@alimento1)
+        end
+        
+        it "Comprobando el método sort" do
+    		expect(@lista1.sort).to eq([@alimento1,@alimento4,@alimento3,@alimento2])
+    		expect(@lista1.sort).not_to eq([@alimento2,@alimento4,@alimento3,@alimento1])
+	    end
+	    it "Comprobando el método collect" do
+            expect( @lista2.collect{|i| @alimento4}).to eq([@alimento4,@alimento4,@alimento4,@alimento4])
+            expect( @lista2.collect{|i| @alimento4}).not_to eq([@alimento1,@alimento2,@alimento3,@alimento4])
+        end
+        it "Comprobando el método select" do
+            expect( @lista1.select{|i| i.nombre == "Kellogs" }).to eq([@alimento1])
+            expect( @lista1.select{|i| i.nombre == "Kellogs" }).not_to eq([@alimento2])
+        end
+    end
+    
+    describe "Enumerable Datos antropométricos"do
+        it "Comprobando el método max" do
+            expect(@lista3.max).to eq(@sujeto2)
+        end
+        
+        it "Comprobando el método min" do
+            expect(@lista3.min).to eq(@sujeto1)
+        end
+        
+        it "Comprobando el método sort" do
+    		expect(@lista3.sort).to eq([@sujeto1,@sujeto4,@sujeto3,@sujeto2])
+    		expect(@lista3.sort).not_to eq([@sujeto2,@sujeto4,@sujeto3,@sujeto1])
+	    end
+	    it "Comprobando el método collect" do
+            expect( @lista4.collect{|i| @sujeto4}).to eq([@sujeto4,@sujeto4,@sujeto4,@sujeto4])
+            expect( @lista4.collect{|i| @sujeto4}).not_to eq([@sujeto1,@sujeto2,@sujeto3,@sujeto4])
+        end
+        it "Comprobando el método select" do
+            expect( @lista3.select{|i| i.nombre == "Omar" }).to eq([@sujeto2])
+            expect( @lista3.select{|i| i.nombre == "Omar" }).not_to eq([@sujeto1])
         end
     end
 end
