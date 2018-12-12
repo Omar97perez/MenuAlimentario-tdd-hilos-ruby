@@ -1,4 +1,4 @@
-require "alimentos/version" 
+# require "alimentos/version" 
 
 # @author Omar Pérez Znakar 
 # Esta clase representa los Datos personales de una persona x
@@ -20,7 +20,6 @@ end
 class Operaciones < Datos
 	include Comparable
  	attr_reader :peso,:altura,:hora,:edad,:sexo,:imc
-    
 	def initialize(nombre,dni,peso,altura,hora,edad,sexo,cintura,cadera,tricipital,bicipital,subescapular,suprailiaco,brazo)
 	    	super(nombre,dni)
     	@peso = peso
@@ -143,5 +142,6 @@ class Operaciones < Datos
 	# Esta funciión consiste en una sobrecarga de los aperadores <=> para que se puedan comparar dos objetos a través de las grasas
 	def <=> another
     	imc <=> another.imc	
-    end
+    	end
+   
 end
