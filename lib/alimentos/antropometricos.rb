@@ -20,7 +20,7 @@ end
 class Operaciones < Datos
 	include Comparable
  	attr_reader :peso,:altura,:hora,:edad,:sexo,:imc
-	def initialize(nombre,dni,peso,altura,hora,edad,sexo,cintura,cadera,tricipital,bicipital,subescapular,suprailiaco,brazo)
+	def initialize(nombre,dni,actividad,peso,altura,hora,edad,sexo,cintura,cadera,tricipital,bicipital,subescapular,suprailiaco,brazo)
 	    	super(nombre,dni)
     	@peso = peso
     	@altura = altura
@@ -34,6 +34,7 @@ class Operaciones < Datos
     	@subescapular = subescapular
     	@suprailiaco = suprailiaco
     	@brazo = brazo
+    	@actividad = actividad
 	end
 
 	# Esta función consiste en calcular la media de la cintura de los valores dado
@@ -143,5 +144,23 @@ class Operaciones < Datos
 	def <=> another
     	imc <=> another.imc	
     	end
-   
+    
+    def gasto_energetico_total()
+    	@peso_teorico_total = (@altura - 150) * (0.75 + 50)
+    	if sexo==0 
+    		@gasto_energetico_basal = (10*@peso) + (6.25 * @altura) - (5*@edad) - 161
+    	else
+    		@gasto_energetico_basal = (10*peso) + (6.25 * altura) - (5*edad) + 5
+    	end	
+    	@efecto_termogeno = @gasto_energetico_basal * 0.10
+    	case @actividad
+        		when ("Reposo") then @factor = 0.0
+        		when ("Ligera") then @factor = 0.12
+        		when ("Moderada") then @factor = 0.27
+        		when ("Intensa") then @factor = 0.54
+    	end
+    	@gasto_actividad_fisica = @gasto_energetico_basal * @factor
+    	
+    	@gasto_energetico_total = @gasto_energetico_basal + @efecto_termogeno + @gasto_actividad_fisica
+    end    
 end

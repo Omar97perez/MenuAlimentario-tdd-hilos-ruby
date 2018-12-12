@@ -107,7 +107,7 @@ RSpec.describe Operaciones do
             	expect(@sujeto4.gasto_energetico_total).to eq(2673.2)
         	end
         	it "Sujeto 5" do 
-            	expect(@sujeto5.gasto_energetico_total).to eq(1793.0)
+            	expect(@sujeto5.gasto_energetico_total).to eq(1768.25)
         	end        	
     end  	
    
