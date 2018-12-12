@@ -45,7 +45,13 @@ class Comida
     	@valor_energetico_kcal_ir = ((@valor_energetico_kcal/2000)*100).round(1)
     	@valor_energetico_kcal_porcion = ((@valor_energetico_kcal/@cantidad)*@porcion).round(1)
     	@valor_energetico_kcal_ir_porcion = ((@valor_energetico_kcal/2000)*@porcion).round(1)
-    	# [@valor_energetico_kcal_cien_gramos,@valor_energetico_kcal_ir,@valor_energetico_kcal_porcion,@valor_energetico_kcal_ir_porcion]
+    	[@valor_energetico_kcal_cien_gramos,@valor_energetico_kcal_ir,@valor_energetico_kcal_porcion,@valor_energetico_kcal_ir_porcion]
+	end
+	
+	# Esta función consiste en un get del valor energético kcal por poción.
+	# @return valor energético kcal por poción.
+	def valor_energetico_kcal_porcion()
+		fila_valor_energetico_kcal()
     	@valor_energetico_kcal_porcion
 	end
 	

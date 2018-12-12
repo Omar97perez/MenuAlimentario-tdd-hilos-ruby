@@ -139,19 +139,19 @@ RSpec.describe Operaciones do
 	describe "Pruebas Menus:"do
 		it "Comprobando el Menú 1" do
 			suma = 0
-			@menu1.collect{|i|  suma = suma + i.fila_valor_energetico_kcal}
+			@menu1.collect{|i|  suma = suma + i.valor_energetico_kcal_porcion}
 			expect(suma).to eq(1116.4)
         	expect(@sujetos.collect{|i| i.gasto_energetico_total < suma }).to eq([true,true,true,false,false])
         end
 		it "Comprobando el Menú 1" do
 			suma = 0
-			@menu2.collect{|i|  suma = suma + i.fila_valor_energetico_kcal}
+			@menu2.collect{|i|  suma = suma + i.valor_energetico_kcal_porcion}
 			expect(suma).to eq(4646.999999999999)
         	expect(@sujetos.collect{|i| i.gasto_energetico_total < suma }).to eq([true,true,true,true,true])
         end
     	it "Comprobando el Menú 3" do
 			suma = 0
-			@menu3.collect{|i|  suma = suma + i.fila_valor_energetico_kcal}
+			@menu3.collect{|i|  suma = suma + i.valor_energetico_kcal_porcion}
 			expect(suma).to eq(518.0)
         	expect(@sujetos.collect{|i| i.gasto_energetico_total < suma }).to eq([true,false,true,false,false])
         end
