@@ -145,6 +145,8 @@ class Operaciones < Datos
     	imc <=> another.imc	
     	end
     
+	# Esta función consiste el cálculo de los gastos energéticos totales
+	# @return gastos energéticos totales
     def gasto_energetico_total()
     	@peso_teorico_total = (@altura - 150) * (0.75 + 50)
     	if sexo==0 
