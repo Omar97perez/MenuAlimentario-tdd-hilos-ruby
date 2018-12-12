@@ -22,8 +22,15 @@ RSpec.describe Operaciones do
 		    @alimento9 = Comida.new("Natilas",100.0,35.0,7.5,4.5,2.0,1.0,80.0,40.0,0.0,36.0,4.3,1.0,0.7,2.0)
 		    @alimento10 = Comida.new("Fanta",100.0,45.0,7.2,4.2,2.0,1.0,70.0,30.0,0.5,37.0,5.3,2.0,0.2,1.5)
 		    
+		    @alimento11 = Comida.new("Crema",100.0,15.0,7.0,4.0,2.0,1.0,71.0,36.0,0.0,46.0,4.0,0.0,0.9,1.0)
+		    @alimento12 = Comida.new("Pollo",100.0,15.0,8.5,5.0,2.5,1.0,65.0,35.0,5.0,33.0,5.3,2.0,1.7,3.0)
+		    @alimento13 = Comida.new("Papas",100.0,15.0,7.0,4.0,2.0,1.0,71.0,36.0,0.0,46.0,4.0,0.0,1.0,1.0)
+		    @alimento14 = Comida.new("Yogurt",100.0,15.0,7.5,4.5,2.0,1.0,80.0,40.0,0.0,36.0,4.3,1.0,0.7,2.0)
+		    @alimento15 = Comida.new("Cocacola",100.0,17.0,7.2,4.2,2.0,1.0,70.0,30.0,0.5,37.0,5.3,2.0,0.2,1.5)
+		    
 		    @menu1 = [@alimento1,@alimento2,@alimento3,@alimento4,@alimento5]
 		    @menu2 = [@alimento6,@alimento7,@alimento8,@alimento9,@alimento10]
+		    @menu3 = [@alimento11,@alimento12,@alimento13,@alimento14,@alimento15]
 		    @sujetos = [@sujeto1,@sujeto2,@sujeto3,@sujeto4,@sujeto5]
 	end
 
@@ -141,6 +148,12 @@ RSpec.describe Operaciones do
 			@menu2.collect{|i|  suma = suma + i.fila_valor_energetico_kcal}
 			expect(suma).to eq(4646.999999999999)
         	expect(@sujetos.collect{|i| i.gasto_energetico_total < suma }).to eq([true,true,true,true,true])
+        end
+    	it "Comprobando el Menú 3" do
+			suma = 0
+			@menu3.collect{|i|  suma = suma + i.fila_valor_energetico_kcal}
+			expect(suma).to eq(518.0)
+        	expect(@sujetos.collect{|i| i.gasto_energetico_total < suma }).to eq([true,false,true,false,false])
         end
 	end
    
