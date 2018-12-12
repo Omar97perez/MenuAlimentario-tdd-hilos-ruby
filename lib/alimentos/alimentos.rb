@@ -5,7 +5,7 @@ require "alimentos/version"
 class Comida
 	include Comparable
 	attr_reader :nombre,:cantidad,:porcion,:grasas,:grasas_saturadas,:grasas_monosaturadas,:grasas_polisaturadas,:hidratos_carbono,:azucares,:polialcoholes,:almidon,:fibra,:proteinas,:sal,:vitaminas_mineral
-	attr_reader :valor_energetico_kj_porcion, :valor_energetico_kcal_porcion, :grasas_porcion, :grasas_saturadas_porcion, :hidratos_carbono_porcion, :azucares_porcion, :proteinas_porcion, :sal_porcion
+	attr_reader :valor_energetico_kj_porcion, :valor_energetico_kcal_porcion, :grasas_porcion, :grasas_saturadas_porcion, :hidratos_carbono_porcion, :azucares_porcion, :proteinas_porcion, :sal_porcion , :valor_energetico_kcal
 
 	def initialize(nombre,cantidad,porcion,grasas,grasas_saturadas,grasas_monosaturadas,grasas_polisaturadas,hidratos_carbono,azucares,polialcoholes,almidon,fibra,proteinas,sal,vitaminas_mineral)
 		@nombre=nombre
@@ -24,6 +24,7 @@ class Comida
     	@sal=sal
     	@vitaminas_mineral=vitaminas_mineral
 	end
+	
 
 	# Esta función consiste en los cálculos de la fila completa de valor energético en kj (Por 100 gr/ IR por 100gr/ Por porción / Ir por porción)
 	# @return Fila completa de valor energético en kj
@@ -44,7 +45,8 @@ class Comida
     	@valor_energetico_kcal_ir = ((@valor_energetico_kcal/2000)*100).round(1)
     	@valor_energetico_kcal_porcion = ((@valor_energetico_kcal/@cantidad)*@porcion).round(1)
     	@valor_energetico_kcal_ir_porcion = ((@valor_energetico_kcal/2000)*@porcion).round(1)
-    	[@valor_energetico_kcal_cien_gramos,@valor_energetico_kcal_ir,@valor_energetico_kcal_porcion,@valor_energetico_kcal_ir_porcion]
+    	# [@valor_energetico_kcal_cien_gramos,@valor_energetico_kcal_ir,@valor_energetico_kcal_porcion,@valor_energetico_kcal_ir_porcion]
+    	@valor_energetico_kcal_porcion
 	end
 	
     # Esta función consiste en los cálculos de la fila completa de grasas (Por 100 gr/ IR por 100gr/ Por porción / Ir por porción)

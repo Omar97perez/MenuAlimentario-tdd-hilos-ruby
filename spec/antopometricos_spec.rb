@@ -8,6 +8,16 @@ RSpec.describe Operaciones do
         	@sujeto5 = Operaciones.new("Omar","79062976Q","Reposo",63,170,"12:00",18,1,[81.0,81.9],[83.0,83.9],[12.5,12.0,13.0],[23.5,22.0,23.9],[18.0,18.0,17.9],[17.0,17.0,17.9],[10.0,11.0])
         	@lista= Lista.new(nil,nil)
         	@lista.insertEnd(@sujeto1,@sujeto2,@sujeto3,@sujeto4,@sujeto5)
+        	
+        	# Práctica 10
+        	@alimento1 = Comida.new("Crema",100.0,30.0,7.0,4.0,2.0,1.0,71.0,36.0,0.0,46.0,4.0,0.0,0.9,1.0)
+		    @alimento2 = Comida.new("Pollo",100.0,34.0,8.5,5.0,2.5,1.0,65.0,35.0,5.0,33.0,5.3,2.0,1.7,3.0)
+		    @alimento3 = Comida.new("Papas",100.0,30.0,7.0,4.0,2.0,1.0,71.0,36.0,0.0,46.0,4.0,0.0,1.0,1.0)
+		    @alimento4= Comida.new("Yogurt",100.0,35.0,7.5,4.5,2.0,1.0,80.0,40.0,0.0,36.0,4.3,1.0,0.7,2.0)
+		    @alimento5 = Comida.new("Cocacola",100.0,37.0,7.2,4.2,2.0,1.0,70.0,30.0,0.5,37.0,5.3,2.0,0.2,1.5)
+		    
+		    @menu = [@alimento1,@alimento2,@alimento3,@alimento4,@alimento5]
+		    @sujetos = [@sujeto1,@sujeto2,@sujeto3,@sujeto4,@sujeto5]
 	end
 
 	describe "Pruebas de clase Datos" do
@@ -93,6 +103,7 @@ RSpec.describe Operaciones do
         	end
     	end
   
+	# Práctica 10
   	describe "Pruebas Gasto energético total" do
         	it "Sujeto 1" do 
             	expect(@sujeto1.gasto_energetico_total).to eq(285.38125)
@@ -109,6 +120,15 @@ RSpec.describe Operaciones do
         	it "Sujeto 5" do 
             	expect(@sujeto5.gasto_energetico_total).to eq(1768.25)
         	end        	
-    end  	
+    end 
+    
+	describe "Pruebas Menus:"do
+		it "Comprobando el Menú 1" do
+			suma = 0
+			@menu.collect{|i|  suma = suma + i.kcal_porcion}
+			expect(suma).to eq(1116.4)
+        	expect(@sujetos.collect{|i| i.gasto_energetico_total < suma }).to eq([true,true,true,false,false])
+        end
+	end
    
 end
