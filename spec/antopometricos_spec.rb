@@ -91,6 +91,24 @@ RSpec.describe Operaciones do
             		end
             		c+=1
         	end
-    	end 	
+    	end
+  
+  	describe "Pruebas Gasto energético total" do
+        	it "Sujeto 1" do 
+            	expect(@sujeto1.gasto_energetico_total).to eq(285.38125)
+        	end
+        	it "Sujeto 2" do 
+            	expect(@sujeto2.gasto_energetico_total).to eq(690.215)
+        	end
+        	it "Sujeto 3" do 
+            	expect(@sujeto3.gasto_energetico_total).to eq(307.05125)
+        	end
+        	it "Sujeto 4" do 
+            	expect(@sujeto4.gasto_energetico_total).to eq(2673.2)
+        	end
+        	it "Sujeto 5" do 
+            	expect(@sujeto5.gasto_energetico_total).to eq(1793.0)
+        	end        	
+    end  	
    
 end
