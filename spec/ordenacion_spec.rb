@@ -60,7 +60,7 @@ RSpec.describe Array do
 		    @array = [@alimento1,@alimento2,@alimento3,@alimento4,@alimento5,@alimento6,@alimento7,@alimento8,@alimento9,@alimento10]
 	end
 
-	describe "Ordenación clase Lista:"do
+	describe "Ordenación clase Array:"do
 
         it "Ordenación método sort" do
             expect(@array.sort).to eq([@alimento1,@alimento3,@alimento2,@alimento5,@alimento4,@alimento9,@alimento10,@alimento7,@alimento6,@alimento8])
