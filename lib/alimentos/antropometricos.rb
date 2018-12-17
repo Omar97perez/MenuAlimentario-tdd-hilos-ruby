@@ -142,7 +142,7 @@ class Operaciones < Datos
 
 	# Esta funciión consiste en una sobrecarga de los aperadores <=> para que se puedan comparar dos objetos a través de las grasas
 	def <=> another
-    	gasto_energetico_total <=> another.gasto_energetico_total
+    	imc <=> another.imc	
     	end
     
 	# Esta función consiste el cálculo de los gastos energéticos totales
