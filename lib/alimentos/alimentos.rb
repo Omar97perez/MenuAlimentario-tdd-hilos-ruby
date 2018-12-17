@@ -182,6 +182,6 @@ class Comida
 
 	# Esta funciión consiste en una sobrecarga de los aperadores <=> para que se puedan comparar dos objetos a través de las grasas
 	def <=> another
-        grasas <=> another.grasas
+       valor_energetico_kcal_porcion <=> another.valor_energetico_kcal_porcion
 	end
 end
