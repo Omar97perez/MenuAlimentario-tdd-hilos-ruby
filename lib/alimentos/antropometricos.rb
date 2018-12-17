@@ -140,11 +140,7 @@ class Operaciones < Datos
     	"#{cintura}\n#{cadera}\n#{bicipital}\n#{tricipital}\n#{subescapular}\n#{suprailiaco}\n#{brazo}\n#{imc}\n#{porcentaje_grasa}\n#{rcc}\n"
     end
 
-	# Esta funciión consiste en una sobrecarga de los aperadores <=> para que se puedan comparar dos objetos a través de las grasas
-	def <=> another
-    	imc <=> another.imc	
-    	end
-    
+
 	# Esta función consiste el cálculo de los gastos energéticos totales
 	# @return gastos energéticos totales
     def gasto_energetico_total()
@@ -165,4 +161,10 @@ class Operaciones < Datos
     	
     	@gasto_energetico_total = @gasto_energetico_basal + @efecto_termogeno + @gasto_actividad_fisica
     end    
+    
+    	# Esta funciión consiste en una sobrecarga de los aperadores <=> para que se puedan comparar dos objetos a través de las grasas
+	def <=> another
+    	gasto_energetico_total <=> another.gasto_energetico_total
+    	end
+    
 end
