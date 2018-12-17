@@ -13,23 +13,20 @@ RSpec.describe Lista do
         	
 		    @lista= Lista.new(nil,nil)
         	@lista.insertEnd(@sujeto1,@sujeto2,@sujeto3,@sujeto4,@sujeto5,@sujeto6,@sujeto7,@sujeto8,@sujeto9,@sujeto10)
-        	
-            @resultado= Lista.new(nil,nil)
-        	@resultado.insertEnd(@sujeto8,@sujeto1,@sujeto3,@sujeto6,@sujeto7,@sujeto2,@sujeto5,@sujeto9,@sujeto10,@sujeto4)
 	end
 	
 	describe "Ordenación clase Lista:"do
 
         it "Ordenación método sort" do
-            expect(@lista.sort).to eq(@resultado)
+            expect(@lista.sort).to eq([@sujeto8,@sujeto1,@sujeto3,@sujeto6,@sujeto7,@sujeto2,@sujeto5,@sujeto9,@sujeto10,@sujeto4])
         end
         
-        it "Ordenación método sort" do
-            expect(@lista.bucle_for).to eq(@resultado)
+        it "Ordenación método for" do
+            expect(@lista.bucle_for).to eq([@sujeto8,@sujeto1,@sujeto3,@sujeto6,@sujeto7,@sujeto2,@sujeto5,@sujeto9,@sujeto10,@sujeto4])
         end
         
-        it "Ordenación método sort" do
-            expect(@lista.bucle_each).to eq(@resultado)
+        it "Ordenación método each" do
+            expect(@lista.bucle_each).to eq([@sujeto8,@sujeto1,@sujeto3,@sujeto6,@sujeto7,@sujeto2,@sujeto5,@sujeto9,@sujeto10,@sujeto4])
         end
 	end
 end
