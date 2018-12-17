@@ -1,3 +1,5 @@
+require "benchmark"
+
 RSpec.describe Lista do
     before :all do
 			@sujeto1 = Operaciones.new("María","79062974Q","Reposo",49,1.67,"12:00",16,0,[72.0,72.9],[82.0,82.9],[10.5,10.0,11.0],[25.5,26.0,25.9],[17.0,17.0,17.9],[25.5,26.0,25.9],[10.0,11.0])
@@ -27,6 +29,15 @@ RSpec.describe Lista do
         
         it "Ordenación método each" do
             expect(@lista.ordenacion_each).to eq([@sujeto8,@sujeto1,@sujeto3,@sujeto6,@sujeto7,@sujeto2,@sujeto5,@sujeto9,@sujeto10,@sujeto4])
+        end
+        
+        it "benchmark metodos ordenar" do
+            n=2000
+            Benchmark.bm do |x|
+            x.report("for:") {  n.times{@lista.ordenacion_for} }
+            x.report("each:") {  n.times{@lista.ordenacion_each} }
+            x.report("sort:") {  n.times{@lista.sort} }  
+        end
         end
 	end
 end
