@@ -34,15 +34,15 @@ RSpec.describe Lista do
         it "benchmark metodos ordenar" do
             n=2000
             Benchmark.bm do |x|
-            x.report("for:") {  n.times{@lista.ordenacion_for} }
-            x.report("each:") {  n.times{@lista.ordenacion_each} }
-            x.report("sort:") {  n.times{@lista.sort} }  
-        end
+                x.report("for:") {  n.times{@lista.ordenacion_for} }
+                x.report("each:") {  n.times{@lista.ordenacion_each} }
+                x.report("sort:") {  n.times{@lista.sort} }  
+            end
         end
 	end
 end
 
-RSpec.describe Lista do
+RSpec.describe Array do
     before :all do
         	# Práctica 10
         	@alimento1 = Comida.new("Crema",100.0,30.0,7.0,4.0,2.0,1.0,71.0,36.0,0.0,46.0,4.0,0.0,0.9,1.0)
@@ -57,7 +57,30 @@ RSpec.describe Lista do
 		    @alimento9 = Comida.new("Natilas",100.0,35.0,7.5,4.5,2.0,1.0,80.0,40.0,0.0,36.0,4.3,1.0,0.7,2.0)
 		    @alimento10 = Comida.new("Fanta",100.0,45.0,7.2,4.2,2.0,1.0,70.0,30.0,0.5,37.0,5.3,2.0,0.2,1.5)
 		    
-		    @menu1 = [@alimento1,@alimento2,@alimento3,@alimento4,@alimento5,@alimento6,@alimento7,@alimento8,@alimento9,@alimento10]
+		    @array = [@alimento1,@alimento2,@alimento3,@alimento4,@alimento5,@alimento6,@alimento7,@alimento8,@alimento9,@alimento10]
 	end
 
+	describe "Ordenación clase Lista:"do
+
+        it "Ordenación método sort" do
+            expect(@array.sort).to eq([@alimento1,@alimento3,@alimento2,@alimento5,@alimento4,@alimento9,@alimento10,@alimento7,@alimento6,@alimento8])
+        end
+        
+        it "Ordenación método for" do
+            expect(@array.ordenacion_for).to eq([@alimento1,@alimento3,@alimento2,@alimento5,@alimento4,@alimento9,@alimento10,@alimento7,@alimento6,@alimento8])
+        end
+        
+        it "Ordenación método each" do
+            expect(@array.ordenacion_each).to eq([@alimento1,@alimento3,@alimento2,@alimento5,@alimento4,@alimento9,@alimento10,@alimento7,@alimento6,@alimento8])
+        end
+        
+        it "benchmark metodos ordenar" do
+            n=2000
+            Benchmark.bm do |x|
+                x.report("for:") {  n.times{@array.ordenacion_for} }
+                x.report("each:") {  n.times{@array.ordenacion_each} }
+                x.report("sort:") {  n.times{@array.sort} }  
+            end
+        end
+	end
 end
