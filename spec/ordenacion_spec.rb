@@ -22,11 +22,11 @@ RSpec.describe Lista do
         end
         
         it "Ordenación método for" do
-            expect(@lista.bucle_for).to eq([@sujeto8,@sujeto1,@sujeto3,@sujeto6,@sujeto7,@sujeto2,@sujeto5,@sujeto9,@sujeto10,@sujeto4])
+            expect(@lista.ordenacion_for).to eq([@sujeto8,@sujeto1,@sujeto3,@sujeto6,@sujeto7,@sujeto2,@sujeto5,@sujeto9,@sujeto10,@sujeto4])
         end
         
         it "Ordenación método each" do
-            expect(@lista.bucle_each).to eq([@sujeto8,@sujeto1,@sujeto3,@sujeto6,@sujeto7,@sujeto2,@sujeto5,@sujeto9,@sujeto10,@sujeto4])
+            expect(@lista.ordenacion_each).to eq([@sujeto8,@sujeto1,@sujeto3,@sujeto6,@sujeto7,@sujeto2,@sujeto5,@sujeto9,@sujeto10,@sujeto4])
         end
 	end
 end
