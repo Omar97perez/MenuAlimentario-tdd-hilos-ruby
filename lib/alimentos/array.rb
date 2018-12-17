@@ -1,4 +1,5 @@
 class Array
+    # Esta función realiza una ordenación haciendo uso del bucle for
 	def ordenacion_for
 		@resultado = self.map { |x| x }
         for x in 0..self.count-1
@@ -17,7 +18,7 @@ class Array
         end
         @resultado
 	end
-	
+	# Esta función realiza una ordenación haciendo uso del bucle each
 	def ordenacion_each
 		@resultado = self.map { |x| x }
 		indice=0

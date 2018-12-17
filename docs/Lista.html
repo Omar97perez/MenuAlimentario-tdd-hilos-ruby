@@ -287,6 +287,54 @@ que se desee</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#ordenacion_each-instance_method" title="#ordenacion_each (instance method)">#<strong>ordenacion_each</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Esta función realiza una ordenación haciendo uso del bucle each.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ordenacion_for-instance_method" title="#ordenacion_for (instance method)">#<strong>ordenacion_for</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Esta función realiza una ordenación haciendo uso del bucle for.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#pop_first-instance_method" title="#pop_first (instance method)">#<strong>pop_first</strong>  &#x21d2; Object </a>
     
 
@@ -589,6 +637,158 @@ que se desee</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="ordenacion_each-instance_method">
+  
+    #<strong>ordenacion_each</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Esta función realiza una ordenación haciendo uso del bucle each</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/alimentos/lista.rb', line 74</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ordenacion_each'>ordenacion_each</span>
+	<span class='ivar'>@resultado</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span> <span class='rbrace'>}</span>
+	<span class='id identifier rubyid_indice'>indice</span><span class='op'>=</span><span class='int'>0</span>
+       <span class='ivar'>@resultado</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span>
+           <span class='id identifier rubyid_var'>var</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span>
+		<span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_indice'>indice</span>
+		<span class='id identifier rubyid_indice2'>indice2</span><span class='op'>=</span><span class='id identifier rubyid_indice'>indice</span> <span class='op'>+</span> <span class='int'>1</span>
+		
+           <span class='ivar'>@resultado</span><span class='lbracket'>[</span><span class='id identifier rubyid_indice2'>indice2</span><span class='op'>..</span><span class='ivar'>@resultado</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_y'>y</span><span class='op'>|</span>
+               <span class='kw'>if</span> <span class='id identifier rubyid_var'>var</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_y'>y</span> 
+                   <span class='id identifier rubyid_var'>var</span> <span class='op'>=</span> <span class='id identifier rubyid_y'>y</span>
+                   <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_indice2'>indice2</span>
+               <span class='kw'>end</span>
+               <span class='id identifier rubyid_indice2'>indice2</span><span class='op'>+=</span><span class='int'>1</span>
+           <span class='kw'>end</span>
+           
+           <span class='ivar'>@resultado</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span>
+           <span class='ivar'>@resultado</span><span class='lbracket'>[</span><span class='id identifier rubyid_indice'>indice</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_var'>var</span>
+           
+           <span class='id identifier rubyid_indice'>indice</span><span class='op'>+=</span><span class='int'>1</span>
+       <span class='kw'>end</span>
+       <span class='ivar'>@resultado</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ordenacion_for-instance_method">
+  
+    #<strong>ordenacion_for</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Esta función realiza una ordenación haciendo uso del bucle for</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/alimentos/lista.rb', line 54</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ordenacion_for'>ordenacion_for</span>
+	<span class='ivar'>@resultado</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='op'>|</span> <span class='id identifier rubyid_x'>x</span> <span class='rbrace'>}</span>
+       <span class='kw'>for</span> <span class='id identifier rubyid_x'>x</span> <span class='kw'>in</span> <span class='int'>0</span><span class='op'>..</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span><span class='op'>-</span><span class='int'>1</span>
+           <span class='id identifier rubyid_var'>var</span> <span class='op'>=</span> <span class='ivar'>@resultado</span><span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='rbracket'>]</span>
+		<span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span>
+
+           <span class='kw'>for</span> <span class='id identifier rubyid_y'>y</span> <span class='kw'>in</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>+</span> <span class='int'>1</span><span class='op'>..</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span><span class='op'>-</span><span class='int'>1</span>
+               <span class='kw'>if</span> <span class='id identifier rubyid_var'>var</span> <span class='op'>&gt;</span> <span class='ivar'>@resultado</span><span class='lbracket'>[</span><span class='id identifier rubyid_y'>y</span><span class='rbracket'>]</span> 
+                   <span class='id identifier rubyid_var'>var</span> <span class='op'>=</span> <span class='ivar'>@resultado</span><span class='lbracket'>[</span><span class='id identifier rubyid_y'>y</span><span class='rbracket'>]</span>
+                   <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_y'>y</span>
+               <span class='kw'>end</span>
+           <span class='kw'>end</span>
+           
+           <span class='ivar'>@resultado</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@resultado</span><span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='rbracket'>]</span>
+           <span class='ivar'>@resultado</span><span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_var'>var</span>
+       <span class='kw'>end</span>
+       <span class='ivar'>@resultado</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="pop_first-instance_method">
   
     #<strong>pop_first</strong>  &#x21d2; <tt>Object</tt> 
@@ -679,7 +879,7 @@ que se desee</p>
 </div>
 
       <div id="footer">
-  Generated on Fri Dec 14 15:59:44 2018 by
+  Generated on Mon Dec 17 23:47:23 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.16 (ruby-2.3.4).
 </div>
