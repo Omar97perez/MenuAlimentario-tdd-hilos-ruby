@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    alimentos (0.1.0)
+    alimentos-alu0100945645 (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -98,7 +98,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  alimentos!
+  alimentos-alu0100945645!
   bundler (~> 1.17)
   coveralls
   guard
@@ -108,4 +108,4 @@ DEPENDENCIES
   rspec (~> 3.0)
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
